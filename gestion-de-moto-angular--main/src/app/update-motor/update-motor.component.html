@@ -1,0 +1,50 @@
+<div class="container">
+  <div>
+    <h2>Modifier un Moto :</h2>
+  </div>
+  <form>
+    <div  class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Moto</label>
+      <input readonly
+        type="text"
+        [(ngModel)]="currentMotor.idMoto"
+        name="idMoto"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Motor</label>
+      <input
+        type="text"
+        [(ngModel)]="currentMotor.modeleMoto"
+        name="modeleMoto"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Prix Motor</label>
+      <input
+        type="number"
+        [(ngModel)]="currentMotor.prixMoto"
+        name="prixMoto"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date création</label>
+      <input
+        type="date"
+        [ngModel]="currentMotor.dateCreation | date: 'yyyy-MM-dd'"
+        (ngModelChange)="currentMotor.dateCreation = $event"
+        name="dateCreation"
+        class="form-control"
+      />
+    </div>
+    <div class="mt-2">
+      <button type="submit"  (click)="updateMoto()" class="btn btn-success">
+        Modifer
+      </button>
+    </div>
+  </form>
+</div>
+
